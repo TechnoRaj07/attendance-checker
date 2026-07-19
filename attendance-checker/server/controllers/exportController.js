@@ -13,7 +13,8 @@ exports.exportAttendancePDF = async (req, res) => {
         const record = await Attendance.findById(req.params.id);
         if (!record) return res.status(404).json({ success: false, error: 'Record not found.' });
 
-        const fileName = `attendance_${record.student.rollNumber}_${Date.now()}.pdf`;
+        const safeRollNumber = record.student.rollNumber.replace(/[^a-zA-Z0-9]/g, '_');
+        const fileName = `attendance_${safeRollNumber}_${Date.now()}.pdf`;
         const filePath = path.join(__dirname, '..', '..', 'reports', fileName);
 
         await generatePDF(record, filePath);

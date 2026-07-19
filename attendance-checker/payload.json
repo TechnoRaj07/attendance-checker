@@ -1,0 +1,1 @@
+{"student":{"name":"Test","rollNumber":"123","year":1,"department":"Computer Science","semester":"1","email":"a@a.com","phone":"123"},"numberOfSubjects":1,"subjects":[{"subjectName":"Math","facultyName":"Smith","totalClasses":10,"attendedClasses":5}]}
