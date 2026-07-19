@@ -1,0 +1,225 @@
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .typing-text {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-cyber {
+        padding: 60px 0;
+    }
+
+    .page-header {
+        padding: 120px 0 40px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .card-cyber {
+        padding: 1.5rem;
+    }
+
+    .report-container {
+        padding: 1.5rem;
+    }
+
+    .overall-percentage {
+        font-size: 2.5rem;
+    }
+
+    .footer-cyber {
+        padding: 40px 0 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 15px 60px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .typing-text {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .section-cyber {
+        padding: 40px 0;
+    }
+
+    .page-header {
+        padding: 100px 0 30px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar-brand-cyber {
+        font-size: 0.8rem;
+    }
+
+    .btn-cyber,
+    .btn-cyber-outline {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .card-cyber {
+        padding: 1.2rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .report-container {
+        padding: 1rem;
+        border-radius: var(--radius);
+    }
+
+    .profile-card {
+        padding: 1rem;
+    }
+
+    .profile-card .profile-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .table-cyber thead th {
+        font-size: 0.65rem;
+        padding: 10px 8px;
+    }
+
+    .table-cyber tbody td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .overall-percentage {
+        font-size: 2rem;
+    }
+
+    .subject-card {
+        padding: 1.2rem;
+    }
+
+    .footer-cyber {
+        padding: 30px 0 15px;
+        margin-top: 40px;
+    }
+
+    .toast-cyber {
+        min-width: auto;
+        margin: 0 10px;
+    }
+
+    .toast-container {
+        right: 0;
+        left: 0;
+    }
+
+    .cyber-cursor,
+    .cyber-cursor-dot {
+        display: none !important;
+    }
+
+    .faq-question {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .login-card {
+        padding: 2rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .btn-cyber,
+    .btn-cyber-outline {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .card-cyber .card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Attendance | University Student Attendance Checker</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <canvas id="particles-bg"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-cyber fixed-top no-print">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-cyber glitch-text" href="/">
+                <i class="fas fa-microchip me-2 text-cyan"></i>ATTENDANCE_SYS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-cyan"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber active" href="/check-attendance">CHECK ATTENDANCE</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/contact">CONTACT</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header no-print">
+        <div class="container position-relative z-1">
+            <h1 class="glitch" data-aos="fade-down">ATTENDANCE_CALCULATOR</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Calculator</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="section-cyber pt-0 no-print">
+        <div class="container">
+            <form id="attendanceForm" class="form-cyber needs-validation" novalidate>
+                <!-- Student Info Card -->
+                <div class="card-cyber mb-5" data-aos="fade-up">
+                    <div class="d-flex align-items-center mb-4 border-bottom border-cyber pb-3">
+                        <i class="fas fa-user-graduate fs-3 text-primary me-3"></i>
+                        <h3 class="font-orbitron text-primary mb-0">STUDENT PROFILE</h3>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" name="studentName" required placeholder="John Doe">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Roll Number</label>
+                            <input type="text" class="form-control" name="rollNumber" required placeholder="CS-2024-001">
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <label class="form-label">Department</label>
+                            <select class="form-select" name="department" required>
+                                <option value="" selected disabled>Select Department...</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Civil">Civil</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Year</label>
+                            <select class="form-select" name="year" required>
+                                <option value="" selected disabled>Select Year...</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Semester</label>
+                            <select class="form-select" name="semester" required>
+                                <option value="" selected disabled>Select Semester...</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" name="email" required placeholder="student@university.edu">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" name="phone" required placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Section -->
+                <div class="d-flex justify-content-between align-items-end mb-4" data-aos="fade-up">
+                    <div>
+                        <h3 class="font-orbitron text-primary mb-1"><i class="fas fa-book me-2"></i>ACADEMIC DATA</h3>
+                        <p class="text-secondary small mb-0">Enter subject details to calculate attendance.</p>
+                    </div>
+                    <button type="button" id="addSubjectBtn" class="btn-cyber-outline btn-sm-cyber">
+                        <i class="fas fa-plus me-2"></i>ADD SUBJECT
+                    </button>
+                </div>
+                
+                <input type="hidden" id="numSubjects" name="numSubjects" value="0">
+                <div class="row" id="subjectsContainer">
+                    <!-- Dynamic subjects injected here via JS -->
+                </div>
+
+                <!-- Action Bar -->
+                <div class="card-cyber text-center py-4 mt-4" data-aos="fade-up">
+                    <p class="text-warning font-orbitron small mb-3">
+                        <i class="fas fa-exclamation-triangle me-1"></i> VERIFY ALL DATA BEFORE GENERATION
+                    </p>
+                    <button type="submit" id="generateBtn" class="btn-cyber btn-lg" style="font-size: 1.1rem; padding: 15px 40px;">
+                        <i class="fas fa-magic me-2"></i> GENERATE REPORT
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Result Section (Hidden initially) -->
+    <section id="resultSection" class="section-cyber pt-0 d-none">
+        <div class="container">
+            <div class="report-container" id="printableReport">
+                <!-- Header -->
+                <div class="report-header">
+                    <h2>OFFICIAL ATTENDANCE REPORT</h2>
+                    <p class="text-secondary mb-0">Generated by University Student Attendance System</p>
+                    <p class="text-muted small" id="resDate"></p>
+                </div>
+
+                <!-- Profile -->
+                <div class="profile-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="profile-item">
+                                <span class="profile-label">Student Name</span>
+                                <span class="profile-value" id="resName"></span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="profile-label">Roll Number</span>
+                                <span class="profile-value font-orbitron" id="resRoll"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-item">
+                                <span class="profile-label">Department</span>
+                                <span class="profile-value" id="resDept"></span>
+                            </div>
+                            <div class="profile-item">
+                                <span class="profile-label">Academic Term</span>
+                                <span class="profile-value" id="resYearSem"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <h4 class="font-orbitron text-primary mb-3">SUBJECT ANALYSIS</h4>
+                <div class="table-responsive-cyber mb-4">
+                    <table class="table-cyber">
+                        <thead>
+                            <tr>
+                                <th>Subject Name</th>
+                                <th>Faculty</th>
+                                <th class="text-center">Total</th>
+                                <th class="text-center">Attended</th>
+                                <th class="text-center">Percentage</th>
+                                <th class="text-center">Needed for 75%</th>
+                                <th class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultTableBody">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Overall Status -->
+                <div id="overallResultBox" class="overall-result">
+                    <h3 class="font-orbitron mb-4">AGGREGATE EVALUATION</h3>
+                    
+                    <div class="row text-center mb-4">
+                        <div class="col-4 border-end border-cyber">
+                            <div class="text-muted small text-uppercase">Total Classes</div>
+                            <div class="fs-4 font-orbitron text-primary" id="overallTotal">0</div>
+                        </div>
+                        <div class="col-4 border-end border-cyber">
+                            <div class="text-muted small text-uppercase">Classes Attended</div>
+                            <div class="fs-4 font-orbitron text-primary" id="overallAttended">0</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-muted small text-uppercase">Final Status</div>
+                            <div class="fs-4 font-orbitron" id="overallStatus">---</div>
+                        </div>
+                    </div>
+                    
+                    <div class="overall-percentage" id="overallPercentage">0%</div>
+                </div>
+
+                <!-- Footer Signatures (For Print) -->
+                <div class="d-none d-print-flex justify-content-between mt-5 pt-5 border-top">
+                    <div class="text-center" style="width: 200px;">
+                        <div style="border-bottom: 1px solid black; height: 40px;"></div>
+                        <div class="mt-2 small">Student Signature</div>
+                    </div>
+                    <div class="text-center" style="width: 200px;">
+                        <div style="border-bottom: 1px solid black; height: 40px;"></div>
+                        <div class="mt-2 small">HOD Signature</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions (Not printed) -->
+            <div class="text-center mt-4 no-print d-flex justify-content-center gap-3">
+                <button class="btn-cyber" id="printBtn">
+                    <i class="fas fa-print me-2"></i> PRINT REPORT
+                </button>
+                <button class="btn-cyber-outline" id="downloadPdfBtn">
+                    <i class="fas fa-file-pdf me-2"></i> DOWNLOAD PDF
+                </button>
+                <button class="btn-cyber-outline" onclick="location.reload()">
+                    <i class="fas fa-redo me-2"></i> NEW CALCULATION
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-cyber mt-0 no-print">
+        <div class="container">
+            <div class="footer-bottom mt-0 border-0 pt-0">
+                &copy; <script>document.write(new Date().getFullYear())</script> University Student Attendance Checker
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/attendance.js"></script>
+</body>
+</html>

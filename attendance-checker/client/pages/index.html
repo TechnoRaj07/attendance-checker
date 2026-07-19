@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Student Attendance Checker | Cyberpunk Edition</title>
+    <meta name="description" content="Calculate your 75% attendance eligibility with our advanced Cyberpunk-themed University Attendance Checker.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text glitch-text">INITIALIZING...</div>
+    </div>
+
+    <!-- Animated Backgrounds -->
+    <div class="bg-grid"></div>
+    <canvas id="particles-bg"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-cyber fixed-top">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-cyber glitch-text" href="/">
+                <i class="fas fa-microchip me-2 text-cyan"></i>ATTENDANCE_SYS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-cyan"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/check-attendance">CHECK ATTENDANCE</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-cyber" href="/contact">CONTACT</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-12 mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="badge-cyber mb-4 d-inline-block pulse">v5.0 Enterprise Edition</div>
+                    <h1 class="hero-title glitch">NEVER FALL SHORT OF <br><span class="text-neon glow-text">75% ATTENDANCE</span></h1>
+                    <p class="hero-subtitle">
+                        Advanced algorithmic calculation to track your university attendance, 
+                        predict required classes, and generate beautiful PDF reports.
+                    </p>
+                    <div class="mb-5 text-center">
+                        <span class="typing-text"></span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-4">
+                        <a href="/check-attendance" class="btn-cyber pulse">CALCULATE NOW <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#features" class="btn-cyber-outline">EXPLORE FEATURES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section-cyber py-5 border-top border-bottom border-cyber" style="background: rgba(0,229,255,0.02);">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="stat-number" data-counter data-target="50000" data-suffix="+">0</h2>
+                    <p class="stat-label">Checks Processed</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="stat-number" data-counter data-target="75" data-suffix="%">0</h2>
+                    <p class="stat-label">Minimum Required</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="stat-number" data-counter data-target="150" data-suffix="+">0</h2>
+                    <p class="stat-label">Universities</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="stat-number" data-counter data-target="99" data-suffix=".9%">0</h2>
+                    <p class="stat-label">Accuracy Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-cyber">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-down">SYSTEM CAPABILITIES</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle" data-aos="fade-up">Enterprise-grade tools for academic excellence</p>
+
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-cyber h-100">
+                        <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                        <h3 class="card-title">Precision Calculator</h3>
+                        <p class="card-text">Exact algorithmic calculation identical to C++ logic. Instantly know exactly how many classes you need to reach 75%.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-cyber h-100">
+                        <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+                        <h3 class="card-title">PDF Generation</h3>
+                        <p class="card-text">Generate beautiful, print-ready PDF reports with your complete academic profile, attendance status, and QR codes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-cyber h-100">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="card-title">Analytics Dashboard</h3>
+                        <p class="card-text">Real-time statistics, subject-wise performance analysis, and university-wide attendance trends for administrators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-cyber" style="background: rgba(0, 229, 255, 0.03);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title text-start mb-4">THE CORE FORMULA</h2>
+                    <div class="section-divider ms-0"></div>
+                    <p class="text-secondary mb-4">Our system uses a mathematically proven formula translated directly from robust C++ backend architecture to ensure 100% accuracy in predicting required classes.</p>
+                    
+                    <div class="card-cyber p-4 mb-4 font-orbitron text-cyan">
+                        <div class="mb-3">Percentage = (Attended / Total) × 100</div>
+                        <div class="mb-3">Minimum Required = 75%</div>
+                        <div class="text-warning">Classes Needed = Max(0, 3 × Total - 4 × Attended)</div>
+                    </div>
+                    <a href="/check-attendance" class="btn-cyber">TEST THE FORMULA</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <div class="card-cyber tilt-effect" style="transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);">
+                            <div class="border-bottom border-cyber pb-3 mb-3 d-flex justify-content-between">
+                                <span class="font-orbitron text-primary">LIVE_PREVIEW</span>
+                                <span><i class="fas fa-circle text-success pulse"></i></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Mathematics (Total: 40, Att: 28)</span>
+                                <span class="text-danger">70.0%</span>
+                            </div>
+                            <div class="progress-cyber mb-4">
+                                <div class="progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                            <div class="alert bg-cyber border-cyber text-warning font-orbitron mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i> NEED 8 MORE CLASSES FOR 75%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-cyber">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="zoom-in">USER PROTOCOLS</h2>
+            <div class="section-divider"></div>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-text">"This system accurately predicted that I needed exactly 12 classes to avoid debarment. Absolute lifesaver."</div>
+                        <div class="testimonial-name">John Doe</div>
+                        <div class="testimonial-role">Computer Science, Year 3</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">AS</div>
+                        <div class="testimonial-text">"The PDF reports look incredibly professional. I attached one to my medical leave application and it was approved instantly."</div>
+                        <div class="testimonial-name">Alice Smith</div>
+                        <div class="testimonial-role">Electronics, Year 2</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">PK</div>
+                        <div class="testimonial-text">"As an administrator, the analytics dashboard gives me unprecedented insight into department-wide attendance trends."</div>
+                        <div class="testimonial-name">Prof. Kumar</div>
+                        <div class="testimonial-role">Head of Department</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-cyber">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a class="navbar-brand-cyber d-block mb-3" href="/">
+                        <i class="fas fa-microchip me-2 text-cyan"></i>ATTENDANCE_SYS
+                    </a>
+                    <p class="text-secondary small pe-lg-5">
+                        A robust, high-performance attendance prediction engine built with enterprise technologies and cyberpunk aesthetics.
+                    </p>
+                    <div class="footer-social mt-4">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Links</h4>
+                    <a href="/" class="footer-link">Home</a>
+                    <a href="/check-attendance" class="footer-link">Calculator</a>
+                    <a href="/about" class="footer-link">About Core</a>
+                    <a href="/contact" class="footer-link">Support</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Legal</h4>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">System Status</h4>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-circle text-success pulse me-2 small"></i>
+                        <span class="text-secondary">Core Engine: ONLINE</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-circle text-success pulse me-2 small"></i>
+                        <span class="text-secondary">Database: CONNECTED</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-circle text-success pulse me-2 small"></i>
+                        <span class="text-secondary">API Gateway: ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <script>document.write(new Date().getFullYear())</script> University Student Attendance Checker | Built with HTML, Node.js & MongoDB
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/animations.js"></script>
+</body>
+</html>

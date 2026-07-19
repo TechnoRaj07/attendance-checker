@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="bg-dark">
+    <div class="admin-layout">
+        <aside class="admin-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-microchip fs-4 text-cyan"></i>
+                <div class="sidebar-logo">ADMIN_SYS</div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="sidebar-section-title">Core</div>
+                <a href="/admin/dashboard" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <div class="sidebar-section-title">System</div>
+                <a href="/admin/logs" class="sidebar-link active"><i class="fas fa-clipboard-list"></i> Activity Logs</a>
+                <a href="/admin/settings" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <header class="admin-topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="sidebar-toggle d-none d-lg-flex" type="button"><i class="fas fa-bars"></i></button>
+                    <h1 class="mb-0">SYSTEM LOGS</h1>
+                </div>
+            </header>
+
+            <div class="card-cyber p-0 fade-in-up">
+                <div class="p-3 border-bottom border-cyber d-flex justify-content-between">
+                    <div class="fw-bold text-primary font-orbitron">ACTIVITY LOGS</div>
+                </div>
+                <div class="p-4 text-center">
+                    <i class="fas fa-terminal fs-1 text-primary mb-3"></i>
+                    <p class="text-secondary font-monospace">Fetching latest system logs...</p>
+                    <div class="spinner-border text-primary mt-2" role="status"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/admin.js"></script>
+</body>
+</html>
